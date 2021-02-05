@@ -4,6 +4,10 @@ let mongodb = require('mongodb')
 const { reset } = require('nodemon')
 let ourApp = express()
 
+let port = process.env.PORT
+if(port == null || port == ""){
+    port = 3000
+}
 let db
 let connectionString = "mongodb+srv://SimpleToDoAppVerTwo:SK1eRaJs39lCLULV@cluster0.9x5vb.mongodb.net/SimpleToDoAppVerTwo?retryWrites=true&w=majority"
 
